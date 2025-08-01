@@ -18,7 +18,7 @@ birthdate = input("Enter your birthdate: ")
 
 # --- (Type Casting) ---
 age = int(age) 
-height_cm = int(height)  
+height_cm = float(height)  
 weight_kg = int(weight)
 
 # --- Result ---
