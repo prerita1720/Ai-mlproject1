@@ -1,0 +1,42 @@
+print("-----------------------------------------------------------------")
+
+print("Welcome to the Pattern Generator and Number Analyzer!")
+print("This program allows you to generate various patterns and analyze numbers.")
+
+print("----------------------------------------------------------------------")
+    
+while(True):
+    print("select and optiom:")
+    print("1.generate pattern")
+    print("2. analyze a range of numbers")
+    print("3. Exit")
+    user_input = int(input("enter your choice:"))
+
+    if user_input == 3:
+        break
+
+    if user_input == 2:
+        starting_range = int(input("enter the start of the range"))
+        ending_range = int(input("enter the end of the range:"))
+        sum = 0
+        for num in range(starting_range , ending_range+1):
+            sum = sum + num
+            if num % 2:
+                print(f"Number {num} is Odd")
+            else:
+                print(f"number{num} is even")   
+        else:
+            print((f"sum of all numbers from {starting_range} to {ending_range} is : {sum}"))    
+    if user_input == 1:
+        n = int (input("enter the number of rows for the pattern:"))     
+        for row in range(0,n):
+            for i in range(1, row + 1):
+             print("*" * i)
+                  
+            print()
+
+print("--------------------------------------------------------------------------------------------")           
+
+print("Goodbye! Thanks for using the Pattern Generator and Number Analyzer. See you next time!")
+
+print("------------------------------------------------------------------------------------------")
