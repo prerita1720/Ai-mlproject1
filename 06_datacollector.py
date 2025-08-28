@@ -1,6 +1,6 @@
 
 
-# Welcome Message
+
 print("====================================")
 print(" Welcome to Personal Data Collector ")
 print("====================================")
@@ -8,7 +8,7 @@ print("This program will collect your personal details.")
 print("Please follow the instructions and enter right details.")
 print()
 
-# --- Collect Information ---
+# Collect Information
 name = input("Enter your full name: ")
 age= input("Enter your age: ")
 height = input("Enter your height : ")
@@ -16,12 +16,11 @@ weight = input("Enter your weight: ")
 email = input("Enter your email address: ")
 birthdate = input("Enter your birthdate: ")
 
-# --- (Type Casting) ---
+#Type Casting
 age = int(age) 
 height_cm = float(height)  
 weight_kg = int(weight)
 
-# --- Result ---
 print("====== yourself ==========")
 print (name)
 print( age)
@@ -30,7 +29,6 @@ print( weight_kg)
 print(email)
 
 
-# --- ID & TYPE Info ---
 
 print("Data type of age        :", type(age), "Memory ID:", id(age))
 print("Data type of height_cm  :", type(height_cm), " Memory ID:", id(height_cm))
