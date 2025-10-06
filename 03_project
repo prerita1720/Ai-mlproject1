@@ -1,0 +1,124 @@
+print("Welcome to the Student Data Organizer by prerita!")
+
+student_list = [] #empty 
+
+subjects_offered = set()
+
+
+def add_student():
+    name = input("Enter student name: ")
+    age = int(input("Enter student age: "))
+    dob = input("Enter student Date of Birth : ")
+    student_id = int(input("Enter student ID: "))
+    grade = input("Enter grade: ")
+    subjects = input("Enter subjects : ").split(",")
+    subjects = [s.strip() for s in subjects]
+
+    print("Student Added Successfully!")
+    
+    student_info = (student_id, dob)
+    
+
+    for subject in subjects:
+        subjects_offered.add(subject)
+        
+    student_details = { 
+        "student_id": student_id,
+        "name": name,
+        "age": age,
+        "grade": grade,
+        "subjects": subjects,
+        "info": student_info
+    }
+    
+
+    student_list.append(student_details)
+
+def display_students():
+    if not student_list:
+        print("No students found.")
+        return
+    
+    print("Display All Students ")
+    for student in student_list:
+        student_id = student["student_id"]
+        name = student["name"]
+        age = student["age"]
+        grade = student["grade"]
+        subjects = ", ".join(student["subjects"])
+        
+        print(f"ID: {student_id}, Name: {name}, Age: {age}, Grade: {grade}, Subjects: {subjects}")
+
+def student_information():
+    student_id = int(input("Enter student ID to update: "))
+    
+    for student in student_list:
+        if student["student_id"] == student_id:
+            print(f"Current information: {student}")
+            choice = input("Enter what you want to change (age, subjects): ").lower()
+            
+            if choice == 'age':
+                new_age = int(input("Enter new age: "))
+                student["age"] = new_age
+                print("Age updated successfully!")
+            
+            elif choice == 'subjects':
+                new_subjects = input("Enter new subjects (comma-separated): ").split(",")
+                student["subjects"] = [s.strip() for s in new_subjects]
+                for subject in student["subjects"]:
+                    subjects_offered.add(subject)
+                print("Subjects updated successfully!")
+            else:
+                print("Invalid option! Choose 'age' or 'subjects'.")
+            break
+    else:
+        print("Student ID not found!")
+
+def del_student():
+    student_id = int(input("Enter student ID number to delete: "))
+    for student in student_list:
+        if student['student_id'] == student_id:
+            student_list.remove(student)  
+            print("Student deleted successfully!")
+            break
+    else:
+        print("Student ID not found.")
+
+def subject_offered():
+    if not subjects_offered:
+        print("No subjects available yet.")
+        return
+    
+    print("Subjects Offered")
+    for subject in subjects_offered:
+        print(subject)
+
+while True:
+    print("Select an Option")
+    print("1. Add Student")
+    print("2. Display All Students")
+    print("3. Update Student Information")
+    print("4. Delete Student")
+    print("5. Display Subjects Offered")
+    print("6. Exit")
+        
+    option = input("Enter an option (1-6): ")
+    if option == "1":
+        add_student()
+    elif option == "2":
+        display_students()
+    elif option == "3":
+        student_information()
+    elif option == "4":
+        del_student()
+    elif option == "5":
+        subject_offered()
+    elif option == "6":
+        print("Exiting Program. Goodbye!")
+        
+        break
+    else:
+        print("Invalid option. Please try again.")
+
+        print("thankyouu for using collection manipulator")
+        print("thankyouu!!! have a nice day!1")
