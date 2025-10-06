@@ -1,0 +1,75 @@
+
+print("====================================================================")
+print("welcome to the data analyzer and transformer program")
+print("====================================================================")
+
+data = []  # global list
+
+def input_data():
+    global data
+    data = [int(x) for x in  input("Enter numbers separated by space: ").split()]
+    print("Data added!")
+
+def display_summary():
+    if data:
+        print("Total:", len(data), "Sum:", sum(data), "Min:", min(data), "Max:", max(data))
+    else:
+        print("No data available!")
+
+
+
+def calculate_factorial():
+    n = int(input("Enter number: "))
+    fact = 1
+    for i in range(2, n + 1):
+        fact *= i
+    print("Factorial:", fact)
+
+def filter_data():
+    if data:
+        t = int(input("Enter threshold: "))
+        print("Filtered data:", [x for x in data if x > t])
+    else:
+        print("No data available!")
+
+def sort_data():
+    if data:
+        order = input("Ascending (a) or Descending (d): ")
+        data.sort(reverse=(order == 'd'))
+        print("Sorted data:", data)
+    else:
+        print("No data available!")
+
+def display_statistics():
+    if data:
+        avg = sum(data) / len(data)
+        print("Min:", min(data), "Max:", max(data), "Avg:", avg)
+    else:
+        print("No data available!")
+
+while True:
+    print("\n1. Input Data")
+    print("2. Display Data Summary")
+    print("3. Calculate Factorial")
+    print("4. Filter Data by Threshold")
+    print("5. Sort Data")
+    print("6. Display Data Statistics")
+    print("7. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == '1': input_data()
+    elif choice == '2': display_summary()
+    elif choice == '3': calculate_factorial()
+    elif choice == '4': filter_data()
+    elif choice == '5': sort_data()
+    elif choice == '6': display_statistics()
+    elif choice == '7':
+       print("==============================================================")
+    print('''Program Ended. Thank you!
+          have a nice day ___by prerita!!!''')
+    print("==============================================================")
+    break
+else:
+    print("Invalid choice! Try again")
+    
