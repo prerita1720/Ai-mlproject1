@@ -1,13 +1,12 @@
-
 print("====================================================================")
-print("welcome to the data analyzer and transformer program")
+print("Welcome to the Data Analyzer and Transformer Program")
 print("====================================================================")
 
 data = []  # global list
 
 def input_data():
     global data
-    data = [int(x) for x in  input("Enter numbers separated by space: ").split()]
+    data = [int(x) for x in input("Enter numbers separated by space: ").split()]
     print("Data added!")
 
 def display_summary():
@@ -15,8 +14,6 @@ def display_summary():
         print("Total:", len(data), "Sum:", sum(data), "Min:", min(data), "Max:", max(data))
     else:
         print("No data available!")
-
-
 
 def calculate_factorial():
     n = int(input("Enter number: "))
@@ -47,6 +44,8 @@ def display_statistics():
     else:
         print("No data available!")
 
+
+# -------- MAIN MENU --------
 while True:
     print("\n1. Input Data")
     print("2. Display Data Summary")
@@ -58,18 +57,23 @@ while True:
 
     choice = input("Enter your choice: ")
 
-    if choice == '1': input_data()
-    elif choice == '2': display_summary()
-    elif choice == '3': calculate_factorial()
-    elif choice == '4': filter_data()
-    elif choice == '5': sort_data()
-    elif choice == '6': display_statistics()
+    if choice == '1':
+        input_data()
+    elif choice == '2':
+        display_summary()
+    elif choice == '3':
+        calculate_factorial()
+    elif choice == '4':
+        filter_data()
+    elif choice == '5':
+        sort_data()
+    elif choice == '6':
+        display_statistics()
     elif choice == '7':
-       print("==============================================================")
-    print('''Program Ended. Thank you!
-          have a nice day ___by prerita!!!''')
-    print("==============================================================")
-    break
-else:
-    print("Invalid choice! Try again")
-    
+        print("====================================================================")
+        print("Program Ended. Thank you!")
+        print("Have a nice day ___by Prerita!!!")
+        print("====================================================================")
+        break
+    else:
+        print("Invalid choice! Please enter a number between 1 and 7.")
